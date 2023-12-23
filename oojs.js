@@ -107,8 +107,92 @@ class House {
     console.log(`The number of doors are ${this.nDoors}
     and the number of windows are ${this.windows}`);
   }
+  static test() {
+    console.log("static method called");
+    this.test1();
+  }
+  static test1() {
+    console.log("another static member called");
+  }
 }
 const obb = new House(3, 5); //creating the instance of a class,and now see constructor method is executed immediately
 const obb1 = new House(2, 6);
 obb.showData();
-obb1.showData();
+House.test();
+
+// ------Inheritance, Subclasses and Extending built in class --------
+//child class inheriting the properties or methods or parent class
+class Child extends String {
+  //child can also have its own method and property
+  noc(str) {
+    console.log(str.length);
+  }
+}
+//obe is abject having all the propertie of its parent class
+const obe = new Child("Test String");
+console.log(obe.toLocaleLowerCase());
+obe.noc("lucknow");
+
+//How do we create or how to we extend the class ?
+
+//creating the parent class
+class Parent {
+  constructor(a) {
+    this.a = a;
+    console.log("Parent");
+  }
+  pMethod() {
+    console.log("Parent method", this.a);
+  }
+}
+//child class getting the propeties or methods of the parent class using extend keyword
+class Child1 extends Parent {
+  constructor(a) {
+    //super is the keryword that allow us to access parent class memebers
+    super(a);
+  }
+  cMethod() {
+    //to call parent method
+    super.pMethod();
+  }
+}
+
+//now creating object of the child class: whatever member you have in the parent are available/ accessible for an object of the 'child'
+let obd = new Child1(99); //as soon as we create the instance of the class constructor method called
+
+obd.cMethod();
+
+// ----Object Destructuring----
+let obt = {
+  pCode: 1001,
+  pName: "Banana",
+};
+//here {} is not an object rathe it is a way of destructuring an object
+let { pCode, pName } = obt;
+console.log(pCode, pName);
+//Object destructuring inside function
+//we can put default value
+
+function testt() {
+  let obt = {
+    p2Code: 101,
+    p2Name: "Grapes",
+  };
+  return obt;
+}
+let { p2Code, p2Name } = testt();
+console.log(p2Code, p2Name);
+
+// ------------Getter & Setter Methods--------------
+
+class Vehicle {
+  get model() {
+    console.log("Getter method is executed");
+  }
+  set model(v) {
+    console.log("Setter method is executed");
+  }
+}
+let obcd = new Vehicle();
+obcd.model = "SUV";
+console.log(obcd.model);

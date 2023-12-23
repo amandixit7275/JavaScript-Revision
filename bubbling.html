@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling and Capturing</title>
+    <style>
+      div {
+        border: 1px solid black;
+        padding: 100px;
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <button id="btn-1">Click Me!</button>
+    </div>
+    <script>
+      const btn1 = document.getElementById("btn-1");
+      const div1 = document.getElementById("div1");
+      window.onload = function () {
+        btn1.addEventListener("click", btnClick, true);
+        div1.addEventListener("click", divClick, true);
+      };
+      function divClick() {
+        alert("Division Clicked");
+      }
+      function btnClick() {
+        alert("Button Clicked");
+      }
+    </script>
+  </body>
+</html>

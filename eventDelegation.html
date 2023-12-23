@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+    <style>
+      table {
+        width: 50%;
+
+        border: 1px solid darkslategray;
+        text-align: center;
+        padding: 5px;
+        margin: auto;
+      }
+      td {
+        border: 1px solid darkgray;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table onclick="mainClick()">
+      <tr>
+        <th>Code</th>
+        <th>Product</th>
+        <th>Price</th>
+      </tr>
+
+      <tr>
+        <td>1001</td>
+        <td>Apple</td>
+        <td>$20</td>
+      </tr>
+      <tr>
+        <td>1002</td>
+        <td>Banana</td>
+        <td>$10</td>
+      </tr>
+      <tr>
+        <td>1003</td>
+        <td>Oranges</td>
+        <td><input type="text" /></td>
+      </tr>
+    </table>
+    <script>
+      function mainClick() {
+        if (event.target.tagName === "TD") {
+          console.log(event.target.innerHTML);
+        } else {
+          console.log(event.target.value);
+        }
+      }
+    </script>
+  </body>
+</html>
