@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Navigation</title>
+    <style>
+      body {
+        display: flex;
+      }
+      div {
+        border: 1px solid black;
+        margin: 20px;
+        padding: 2px 80px;
+      }
+      button {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <h1>First division</h1>
+      <ul>
+        <li>First Item</li>
+        <li>Second Item</li>
+      </ul>
+    </div>
+    <div>
+      <h1>Second Item</h1>
+      <input type="text" /> <br />
+      <button onclick="btnClick()">Click Me!</button>
+    </div>
+    <script>
+      function btnClick() {
+        //     console.log(document.documentElement);
+        //     console.log(document.body);
+        //     console.log(document.head);
+        //     console.log(document.body.childNodes); //for getting all nodes
+        //     //NOTE: nodes included everything i.e text,space,next line
+        //     console.log(document.body.childNodes.length);
+        //     console.log(document.body.children);
+        //   }
+        const div1 = document.getElementById("div1");
+        console.log(div1.firstChild);
+        console.log(div1.firstElementChild);
+        console.log(div1.firstElementChild.nodeName);
+        console.log(div1.firstElementChild.nodeType);
+        console.log(div1.nextSibling);
+        console.log(div1.nextElementSibling);
+        console.log(div1.parentNode);
+        console.log(div1.parentElement);
+      }
+    </script>
+  </body>
+</html>
