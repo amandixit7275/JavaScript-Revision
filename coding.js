@@ -1,3 +1,5 @@
+//Important Javascript Revision Coding Question
+
 //Q) Given value is an array or not ?
 let arr = [1, 2, 3, 4, 5, 3, 5];
 console.log(toString.call(arr));
