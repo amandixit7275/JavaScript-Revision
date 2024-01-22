@@ -93,3 +93,5 @@ while (num > 0) {
   num = parseInt(num / 10);
 }
 console.log(rev);
+
+// Write code to print fabonacci
